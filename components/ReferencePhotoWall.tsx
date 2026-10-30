@@ -85,90 +85,99 @@ export default function ReferencePhotoWall({ onNextSection }: { onNextSection: (
   return (
     <section
       id="photo-wall"
-      className="relative min-h-screen bg-[#F5F2EB] text-black py-20 px-4 sm:px-8 bg-cream-dots flex flex-col items-center justify-center select-none"
+      className="relative min-h-screen bg-[#F5F2EB] text-black py-16 sm:py-20 px-4 sm:px-8 bg-cream-dots flex flex-col items-center justify-center select-none w-full"
     >
       <div className="max-w-5xl w-full mx-auto">
         {/* Main Hot Pink Banner Card */}
-        <div className="rounded-3xl bg-[#E91E8C] text-white border-[2.5px] border-black pt-10 pb-10 px-8 sm:px-12 shadow-[6px_6px_0px_#171714] relative overflow-hidden mb-14">
+        <div className="rounded-2xl sm:rounded-3xl bg-[#E91E8C] text-white border-[2.5px] border-black pt-7 sm:pt-10 pb-7 sm:pb-10 px-5 sm:px-12 shadow-[5px_5px_0px_#171714] sm:shadow-[6px_6px_0px_#171714] relative overflow-hidden mb-10 sm:mb-14">
           {/* Top Metadata */}
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-5 sm:mb-8">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-full border-2 border-white flex items-center justify-center font-barlow text-xs font-black">
+              <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border-2 border-white flex items-center justify-center font-barlow text-xs font-black">
                 04
               </div>
-              <span className="font-barlow text-xs sm:text-sm tracking-widest uppercase font-black">
+              <span className="font-barlow text-xs tracking-widest uppercase font-black">
                 PHOTO WALL
               </span>
             </div>
-            <div className="flex items-center gap-2 font-barlow text-xs sm:text-sm tracking-wider font-black uppercase text-black/80">
-              <span>VOL. 01 &bull; AFTER DIWALI EDITION</span>
+            <div className="font-barlow text-[10px] sm:text-xs tracking-wider font-black uppercase text-black/80">
+              AFTER DIWALI EDITION
             </div>
           </div>
 
           {/* Headline with Camera */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-4">
-            <div>
-              <div className="font-barlow font-black text-5xl sm:text-7xl leading-[0.88] text-black pt-2 uppercase">
+          <div className="flex flex-row items-start justify-between gap-4 mb-4">
+            <div className="flex-1 min-w-0">
+              <div
+                className="font-barlow font-black text-black uppercase leading-[0.88]"
+                style={{ fontSize: 'clamp(2.2rem, 10vw, 5rem)' }}
+              >
                 DIWALI KI
               </div>
-              <div className="flex items-baseline gap-2 pt-1">
-                <span className="font-playfair italic font-black text-[#FFF0D2] text-5xl sm:text-7xl leading-[0.88]">
+              <div className="flex items-baseline gap-1.5 pt-1 flex-wrap">
+                <span
+                  className="font-playfair italic font-black text-[#FFF0D2] leading-[0.88]"
+                  style={{ fontSize: 'clamp(2.2rem, 10vw, 5rem)' }}
+                >
                   gossip
                 </span>
-                <span className="font-barlow font-black text-black text-5xl sm:text-7xl leading-[0.88] uppercase">
+                <span
+                  className="font-barlow font-black text-black uppercase leading-[0.88]"
+                  style={{ fontSize: 'clamp(2.2rem, 10vw, 5rem)' }}
+                >
                   ARCHIVE
                 </span>
               </div>
 
-              {/* Notice requested by user */}
-              <div className="mt-5 p-4 rounded-2xl bg-black/25 border border-white/20 max-w-xl backdrop-blur-xs">
-                <p className="text-[#FFC928] font-black text-xs sm:text-sm tracking-wide uppercase font-barlow">
+              {/* Notice */}
+              <div className="mt-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-black/25 border border-white/20 backdrop-blur-xs">
+                <p className="text-[#FFC928] font-black text-[10px] sm:text-xs tracking-wide uppercase font-barlow">
                   📸 AFTER DIWALI PARTY NOTICE:
                 </p>
-                <p className="text-white text-xs sm:text-sm font-sans-clean leading-relaxed mt-0.5">
-                  After the Diwali party, upload <strong>2 photos of your choice</strong> here to make the photo wall so all friends and family who attend can view and contribute their favorite memories!
+                <p className="text-white text-[11px] sm:text-sm font-sans-clean leading-relaxed mt-0.5">
+                  After the party, upload <strong>2 photos of your choice</strong> here to build our official celebration gallery!
                 </p>
               </div>
             </div>
 
-            {/* Vintage Camera Illustration */}
-            <div className="relative flex-shrink-0">
-              <div className="w-24 h-18 sm:w-32 sm:h-22 rounded-2xl bg-[#171714] border-2 border-black p-2 shadow-lg flex flex-col items-center justify-center relative">
-                <div className="w-12 h-12 rounded-full bg-neutral-700 border-2 border-neutral-400 flex items-center justify-center">
-                  <div className="w-6 h-6 rounded-full bg-[#171714] border border-neutral-300" />
+            {/* Vintage Camera Illustration — hide on very small phones */}
+            <div className="relative flex-shrink-0 hidden xs:block sm:block">
+              <div className="w-20 sm:w-28 rounded-2xl bg-[#171714] border-2 border-black p-2 shadow-lg flex flex-col items-center justify-center relative aspect-square">
+                <div className="w-10 h-10 rounded-full bg-neutral-700 border-2 border-neutral-400 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-[#171714] border border-neutral-300" />
                 </div>
-                <div className="absolute top-1.5 right-3 w-4 h-2 bg-neutral-500 rounded-xs" />
-                <div className="absolute -top-2 right-4">
-                  <div className="w-3.5 h-3.5 rounded-full bg-[#FFC928] border border-black" />
+                <div className="absolute top-1 right-2.5 w-3 h-1.5 bg-neutral-500 rounded-xs" />
+                <div className="absolute -top-1.5 right-3">
+                  <div className="w-3 h-3 rounded-full bg-[#FFC928] border border-black" />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          <div className="flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-3 pt-3 sm:pt-4">
             <button
               onClick={() => {
                 sounds.playClick();
                 setIsModalOpen(true);
               }}
-              className="btn-retro py-3.5 px-7 rounded-full bg-[#F5C842] text-black font-syne text-base sm:text-lg tracking-wider font-extrabold cursor-pointer flex items-center gap-2"
+              className="btn-retro py-2.5 sm:py-3.5 px-5 sm:px-7 rounded-full bg-[#F5C842] text-black font-barlow text-sm sm:text-base tracking-wider font-black uppercase cursor-pointer flex items-center justify-center gap-2"
             >
-              <Upload className="w-4 h-4 stroke-[3]" />
-              <span>UPLOAD YOUR 2 DIWALI PHOTOS +</span>
+              <Upload className="w-4 h-4 stroke-[2.5]" />
+              <span>UPLOAD 2 DIWALI PHOTOS +</span>
             </button>
             <button
               onClick={handleShareGallery}
-              className="btn-retro py-3 px-6 rounded-full bg-[#F5EDD8] text-black font-syne text-sm sm:text-base tracking-wider font-bold flex items-center gap-2 cursor-pointer"
+              className="btn-retro py-2.5 sm:py-3 px-4 sm:px-6 rounded-full bg-[#F5EDD8] text-black font-barlow text-xs sm:text-sm tracking-wider font-black uppercase flex items-center justify-center gap-2 cursor-pointer"
             >
-              <LinkIcon className="w-4 h-4" />
-              <span>SHARE GALLERY LINK</span>
+              <LinkIcon className="w-3.5 h-3.5" />
+              <span>SHARE GALLERY</span>
             </button>
           </div>
 
           {/* Bottom Right Corner Marigold Flower */}
           <div className="absolute -bottom-6 -right-6 pointer-events-none opacity-90">
-            <MarigoldFlower className="w-36 h-36" />
+            <MarigoldFlower className="w-28 sm:w-36 h-28 sm:h-36" />
           </div>
         </div>
 
